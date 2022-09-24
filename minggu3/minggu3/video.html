@@ -1,0 +1,43 @@
+<!DOCTYPE html!>
+<html>
+  <head>
+    <title>Multimedia HTML5</title>
+  </head>
+  <body>
+    <h2>HTML 5 - Mengolah File Multimedia</h2>
+    <button onclick="enableControls()">enable control</button>
+    <button onclick="disableControls()">disable control</button><br />
+    <button onclick="playVid()">play</button>
+    <button onclick="pauseVid()">pause</button>
+    <button onclick="vidDuration()">duration</button><br />
+    <video id="myVideo" width="420">
+      <source
+        src="https://drive.google.com/uc?export=view&id=16V1YhcefVAM1-TwxQLDPpl0Kqpm_gYSW"
+        type="video/mp4"
+      />
+    </video>
+  </body>
+  <script>
+    var vid = document.getElementById("myVideo");
+    function enableControls() {
+      vid.controls = true;
+      vid.load();
+    }
+    function disableControls() {
+      vid.controls = false;
+      vid.load();
+    }
+    function playVid() {
+      vid.play();
+      vid.loop = true;
+    }
+
+    function pauseVid() {
+      vid.pause();
+    }
+
+    function vidDuration() {
+      alert(vid.duration);
+    }
+  </script>
+</html>
