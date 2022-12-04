@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kuis HTML</title>
+  </head>
+
+  <body>
+    <h2>Data Mahasiswa PBW 2022</h2>
+    <form method="POST" action="javascript:void(0);" onsubmit="addDatas()">
+      <input type="text" placeholder="Input Nama MHS" id="tambahNama" />
+      <input type="submit" value="+" />
+    </form>
+    <div id="counter">
+      <!-- data dinamis dari javascript-->
+    </div>
+    <table border="1">
+      <thead>
+        <tr>
+          <td>
+            <b>No</b>
+          </td>
+          <td>
+            <b>Daftar Nama</b>
+          </td>
+        </tr>
+      </thead>
+      <tbody id="mhs">
+        <!-- data dinamis dari javascript-->
+        <tr>
+          <td>1</td>
+          <td>Nama 1</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      let arrData = [];
+
+      function addDatas() {
+        const name = document.getElementById("tambahNama").value;
+        arrData.push(name);
+        var tabel = document.getElementById("mhs");
+        tabel.innerHTML = "";
+
+        var data = "";
+        arrData.forEach((e, i) => {
+          data += "<tr>";
+          data += "<td>" + (i + 1) + "</td>";
+          data += "<td>" + e + "</td>";
+          data += "</tr>";
+        });
+
+        console.log(data);
+        tabel.innerHTML = data;
+      }
+    </script>
+  </body>
+</html>
